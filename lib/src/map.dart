@@ -293,7 +293,7 @@ class MapPickerState extends State<MapPicker> {
         "address"   : response['results'][0]['formatted_address'],
         "long_name" : response['results'][0]['address_components'][1]['long_name'],
         "country"   : getCountryName(response['results'][0]),
-        "city"      : getCityName(response['results'][0]),
+        "city"      : getCityName(response['results'][0]) == null ? getCityName2(response['results'][0]) : getCityName(response['results'][0]),
         "state"      : getStateName(response['results'][0])
        // "city"    : getCityName(response['results'][0]['address_components'])
       };
@@ -349,7 +349,23 @@ class MapPickerState extends State<MapPicker> {
             return cityName;
           }
         }
-      }else{
+      } else{
+        return 'N/A';
+      }
+    }
+  }
+
+  String getCityName2(dynamic addressArray){
+    String cityName = '';
+    for (var i = 0; i < addressArray['address_components'].length; i++) {
+      if(addressArray['address_components'][i]['types'].length > 0){
+        for (var x = 0; x < addressArray['address_components'][i]['types'].length; x++) {
+          if ('postal_town' == addressArray['address_components'][i]['types'][x]) {
+            cityName = addressArray['address_components'][i]['long_name'];
+            return cityName;
+          }
+        }
+      } else{
         return 'N/A';
       }
     }

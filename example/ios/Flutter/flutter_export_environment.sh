@@ -1,7 +1,7 @@
 #!/bin/sh
 # This is a generated file; do not edit or check into version control.
 export "FLUTTER_ROOT=/Users/ejaz/development/flutter"
-export "FLUTTER_APPLICATION_PATH=/Users/ejaz/Downloads/google_map_location_picker-04ddb41a748086f58e599d9835c28083f6fd1794/example"
+export "FLUTTER_APPLICATION_PATH=/Users/ejaz/AndroidStudioProjects/google-maps-flutter-3.3.4/example"
 export "FLUTTER_TARGET=lib/main.dart"
 export "FLUTTER_BUILD_DIR=build"
 export "SYMROOT=${SOURCE_ROOT}/../build/ios"
